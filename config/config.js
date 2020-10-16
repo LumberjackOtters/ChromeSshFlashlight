@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       
       event.target.parentElement.parentElement.remove()
     })
-}
+  }
   
   var form = document.getElementById('config');
   form.addEventListener('submit', function(e) {

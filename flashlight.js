@@ -2,21 +2,21 @@ var active = false;
 
 function flashlight(info) {
   var sshFlashlight = JSON.parse(localStorage.sshFlashlight);
-  
   var host = info.url.match(/^(?:http)s?:\/\/([\w][^\/=\s]+)\/?|(^w{3}[\.\w][^\/\=\s]{2,})\/?/gi)[0]
-  
-  if (host.indexOf("localhost") > 0) {
-      if (info.initiator) {
-        var url = info.url
-        return { redirectUrl : url.replace(/^(?:http)s?:\/\/([\w][^\/=\s]+)\/?|(^w{3}[\.\w][^\/\=\s]{2,})\/?/gi, info.initiator + '/' ) }
-      }
-  }
-  
+
   for (let slug in sshFlashlight.redirections) {
-    console.log(host.match("https://"+slug) || host.match("http://"+slug))
     if (host.match("https://"+slug) || host.match("http://"+slug)) {
       var url = info.url
       return { redirectUrl : url.replace(/^(?:http)s?:\/\/([\w][^\/=\s]+)\/?|(^w{3}[\.\w][^\/\=\s]{2,})\/?/gi, sshFlashlight.redirections[slug] + '/' ) }
+    }
+  }
+
+  if (info.initiator) {
+    var isSameHost = host.includes(info.initiator)
+
+    if (host.indexOf("localhost") > 0 || !isSameHost) {
+      var url = info.url
+      return { redirectUrl : url.replace(/^(?:http)s?:\/\/([\w][^\/=\s]+)\/?|(^w{3}[\.\w][^\/\=\s]{2,})\/?/gi, info.initiator + '/' ) }
     }
   }
 }
