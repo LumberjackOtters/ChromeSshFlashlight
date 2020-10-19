@@ -1,6 +1,11 @@
 var active = false;
 
 function flashlight(info) {
+  if (!localStorage.sshFlashlight) {
+    localStorage.sshFlashlight = JSON.stringify({
+      "redirections": {"example": "https://example.com"}
+    })
+  }
   var sshFlashlight = JSON.parse(localStorage.sshFlashlight);
   var host = info.url.match(/^(?:http)s?:\/\/([\w][^\/=\s]+)\/?|(^w{3}[\.\w][^\/\=\s]{2,})\/?/gi)[0]
 

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-  console.log(localStorage)
   if (!localStorage.sshFlashlight) {
     localStorage.sshFlashlight = JSON.stringify({
       "redirections": {"example": "https://example.com"}
