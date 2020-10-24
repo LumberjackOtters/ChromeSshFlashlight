@@ -1,10 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-  if (!localStorage.sshFlashlight) {
-    localStorage.sshFlashlight = JSON.stringify({
-      "redirections": {"example": "https://example.com"}
-    })
-  }
-  
+document.addEventListener("DOMContentLoaded", function(event) {  
   var redirections = JSON.parse(localStorage.sshFlashlight).redirections
   for (let slug in redirections) {
     var data = document.getElementById('redirections').insertRow()

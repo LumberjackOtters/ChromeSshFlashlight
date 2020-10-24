@@ -1,0 +1,13 @@
+{
+    "extends": ["airbnb-base"],
+    "rules": {
+      "no-invalid-regexp": "off",
+      "no-restricted-syntax": "off",
+      "no-useless-escape": "off",
+      "space-before-function-paren": ["error",  {
+          "anonymous": "never",
+          "named": "never",
+          "asyncArrow": "always"
+      }]
+    }
+}
