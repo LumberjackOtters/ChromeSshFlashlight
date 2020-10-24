@@ -51,16 +51,15 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         }
         
         chrome.webRequest.onBeforeRequest.addListener(
-      
-        flashlight,
-      
-        // filters
-        {
-          urls: urls,
-          types: types
-        },
-        // extraInfoSpec
-        ["blocking"]);
+          flashlight,
+          // filters
+          {
+            urls: urls,
+            types: types
+          },
+          // extraInfoSpec
+          ["blocking"]
+        );
     }else{
         chrome.browserAction.setIcon({path:"inactive.png"});
         chrome.webRequest.onBeforeRequest.removeListener(
