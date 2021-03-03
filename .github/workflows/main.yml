@@ -22,15 +22,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       - name: Get version
         id: version
         uses: notiz-dev/github-action-json-property@release
         with: 
             path: 'manifest.json'
             prop_path: 'version'
-
-
       - name: Zip Release
         # You may pin to the exact commit or the version.
         # uses: TheDoctor0/zip-release@a1afcab9c664c9976ac398fa831eac67bed1eb0e
@@ -41,8 +38,7 @@ jobs:
           # Base path for archive files
           path: .
           exclusions: '*.git* .editorconfig .eslint *.github*'
-
-        - name: Upload Release
+      - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "chromesshflashlight.zip"
