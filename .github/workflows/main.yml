@@ -31,7 +31,8 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-      
+          echo test, and deploy your project.
+    
       - name: Zip Release
         # You may pin to the exact commit or the version.
         # uses: TheDoctor0/zip-release@a1afcab9c664c9976ac398fa831eac67bed1eb0e
@@ -41,5 +42,3 @@ jobs:
           filename: release.zip
           # Base path for archive files
           path: .
-
-          echo test, and deploy your project.
