@@ -10,13 +10,19 @@
       "64": "icons/icon64.png",
       "128": "icons/icon128.png"
   },
-  "version": "1.3",
+  "version": "1.4",
   "background": {
     "scripts": ["flashlight.js"]
   },
-  "options_page": "config/config.html",
+  "options_ui": {
+    "page": "config/config.html",
+    "open_in_tab": true
+  },
+  "omnibox": {
+    "keyword": "flash"
+  },
   "browser_action": {
-        "name": "Click to activate the flashlight"
+    "default_title": "Click to activate the flashlight"
   },
   "permissions": [
     "activeTab",
