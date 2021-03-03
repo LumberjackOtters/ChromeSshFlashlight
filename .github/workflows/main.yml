@@ -37,7 +37,7 @@ jobs:
           filename: chromesshflashlight.zip
           # Base path for archive files
           path: .
-          exclusions: '*.git* .editorconfig .eslint *.github*'
+          exclusions: '*.git* .editorconfig .eslintrc *.github* README.md'
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
