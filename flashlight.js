@@ -24,7 +24,7 @@ function flashlight(info) {
   }
 
   // Flashlight part
-  if (initiator) {
+  if (initiator && !initiator.includes("chrome-extension")) {
     var isSameHost = initiator.includes(host)
     if (host.indexOf("localhost") > 0 || !isSameHost) {
       localStorage.sshFlashlightHandled = info.requestId

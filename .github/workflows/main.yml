@@ -43,7 +43,7 @@ jobs:
         with:
           artifacts: "chromesshflashlight.zip"
           bodyFile: "README.md"
-          tag: ${{steps.version.outputs.prop}}
+          tag: "v${{steps.version.outputs.prop}}"
           token: ${{ secrets.DEPLOYR_TOKEN }}
           allowUpdates: true
           prerelease: true

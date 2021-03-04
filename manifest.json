@@ -10,7 +10,7 @@
       "64": "icons/icon64.png",
       "128": "icons/icon128.png"
   },
-  "version": "1.4",
+  "version": "1.4.1",
   "background": {
     "scripts": ["flashlight.js"]
   },
